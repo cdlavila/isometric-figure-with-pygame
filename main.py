@@ -3,6 +3,7 @@ from Model import isometric_figure
 
 
 if __name__ == '__main__':
+    black = [0, 0, 0]
     lightBlue = [48, 187, 246]
     width = height = 600
 
@@ -11,12 +12,22 @@ if __name__ == '__main__':
     screen = pygame.display.set_mode([width, height])
 
     # Creates isometric figure
-    figure = isometric_figure.IsometricFigure(screen, 30, lightBlue)
-    figure.draw()
+    figure = isometric_figure.IsometricFigure(25, lightBlue)
+    figure.draw(screen)
 
+    # Keeps screen opended
     end = False
     while not end:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 end = True
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_UP:
+                    screen.fill(black)
+                    figure.scaling(0.1)
+                    pygame.display.flip()
+                if event.key == pygame.K_DOWN:
+                    screen.fill(black)
+                    figure.scaling(-0.1)
+                    pygame.display.flip()
         pygame.display.flip()
