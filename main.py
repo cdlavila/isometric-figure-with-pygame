@@ -22,12 +22,15 @@ if __name__ == '__main__':
             if event.type == pygame.QUIT:
                 end = True
             if event.type == pygame.KEYDOWN:
+                screen.fill(black)
                 if event.key == pygame.K_UP:
-                    screen.fill(black)
                     figure.scaling(0.1)
                     pygame.display.flip()
                 if event.key == pygame.K_DOWN:
-                    screen.fill(black)
                     figure.scaling(-0.1)
                     pygame.display.flip()
+                if event.key == pygame.K_RIGHT:
+                    figure.rotate(1)
+                if event.key == pygame.K_LEFT:
+                    figure.rotate(-1)
         pygame.display.flip()

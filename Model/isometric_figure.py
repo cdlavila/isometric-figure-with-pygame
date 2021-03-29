@@ -1,6 +1,8 @@
 import pygame
 from Functions import translation_transformation as tt
 from Functions import scaling as sc
+from Functions import rotate_left as rl
+from Functions import rotate_right as rr
 
 
 class IsometricFigure:
@@ -9,6 +11,7 @@ class IsometricFigure:
         self.__surface = None
         self.__points = []
         self.__scaling = 1
+        self.__rotation = 0
         self.__size = size
         self.__color = color
 
@@ -55,7 +58,9 @@ class IsometricFigure:
             translatedPoints = []
             for point in points:
                 translatedPoints.append(tt.translationTransformation(center, point))
-
+            print("\nIsometric figure has been drawn successfully")
+            print(f"Simetric scaling: {self.__scaling}")
+            print(f"Rotation: {self.__rotation}\n")
             self.__points = points
         else:
             translatedPoints = []
@@ -92,5 +97,27 @@ class IsometricFigure:
                 self.__points = scaledPoints
                 self.draw(self.__surface)
                 print("Simetric scaling: ", self.__scaling)
+            else:
+                self.draw(self.__surface)
+
+    def rotate(self, t):
+        if len(self.__points) > 0:
+            if -30 <= self.__rotation + t <= 30:
+                rotatedPoints = []
+                if t == 1:
+                    for point in self.__points:
+                        rotatedPoints.append(rr.rotateRight(point, t))
+                if t == -1:
+                    for point in self.__points:
+                        rotatedPoints.append(rl.rotateLeft(point, t * (-1)))
+                self.__rotation += t
+                self.__points = rotatedPoints
+                self.draw(self.__surface)
+                if self.__rotation == 0:
+                    print("Rotation: 0°")
+                if self.__rotation > 0:
+                    print(f"Hourly rotation: {self.__rotation}°")
+                if self.__rotation < 0:
+                    print(f"Anti-hourly rotation: {self.__rotation * (-1)}°")
             else:
                 self.draw(self.__surface)
