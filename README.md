@@ -15,9 +15,11 @@ This program draws the next isometric figure on the screen.
 DEVELOPED BY:
 - Carlos Daniel Londoño Avila
 - Juan Esteban Montoya Molina
+- Sebastián Velásquez Múnera
 
 EMAILS:
 - carlosdaniel.londono@utp.edu.co
 - juanesteban.montoya@utp.edu.co
+- sebastian.velasquez1@utp.edu.co
 
 FOR COMPUTER GRAPICH CLASS, UNIVERSIDAD TECNOLÓGICA DE PEREIRA.

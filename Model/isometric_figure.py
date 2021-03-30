@@ -79,6 +79,7 @@ class IsometricFigure:
         # Connect the rest of points with lines
         pygame.draw.line(surface, self.__color, translatedPoints[3], translatedPoints[10])
         pygame.draw.line(surface, self.__color, translatedPoints[10], translatedPoints[7])
+        pygame.draw.line(surface, self.__color, translatedPoints[10], translatedPoints[5])
         pygame.draw.line(surface, self.__color, translatedPoints[2], translatedPoints[11])
         pygame.draw.line(surface, self.__color, translatedPoints[11], translatedPoints[7])
         pygame.draw.line(surface, self.__color, translatedPoints[11], translatedPoints[12])
