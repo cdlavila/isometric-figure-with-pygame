@@ -6,7 +6,7 @@ This program draws the next isometric figure on the screen.
 
 - We are using the Pygame library.
 - Install Pygame library: `pip install pygame`
-- Run the main file to star program `python main.py`
+- Run the main file to start program `python main.py`
 - Key up increases the scaling of the figure 0.1, each time it is pressed
 - Key down decreases the scaling of the figure 0.1, each time it is pressed
 - Key right, rotates right the figure 1 degree, each time it is pressed
