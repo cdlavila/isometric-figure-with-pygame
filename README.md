@@ -1,4 +1,4 @@
-# Isometric figure in Python with Pygame
+# Isometric figure with Pygame
 
 This program draws the next isometric figure on the screen.
 
